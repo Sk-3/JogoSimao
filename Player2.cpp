@@ -48,8 +48,25 @@ void Player2::moveRight()
 	}
 }
 
+void Player2::dash()
+{
+	if (speed.x >= 0) {
+		speed.x = 20;
+	}
+	else {
+		speed.x = -20;
+	}
+}
+
 void Player2::stopAxisX()
 {
+	if (speed.x > maxSpeed) {
+		speed.x -= 0.4;
+	}
+	else if (speed.x < -maxSpeed) {
+		speed.x += 0.4;
+	}
+
 	if (speed.x != 0) {
 		if (speed.x >= 0) {
 			if (speed.x - 0.2 < 0) {

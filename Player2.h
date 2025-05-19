@@ -14,7 +14,9 @@ public:
 	void moveDown();
 	void moveLeft();
 	void moveRight();
-	
+	void dash();
+
+
 	void stopAxisX();
 
 	void hitTop();

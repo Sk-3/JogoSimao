@@ -40,6 +40,10 @@ void Fase2::handleEvent()
 		pPlayer2->moveDown();
 	}
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) {
+		pPlayer2->dash();
+	}
+
 	sf::Event ev;
 	while (window->pollEvent(ev)) {
 		switch (ev.type) {
