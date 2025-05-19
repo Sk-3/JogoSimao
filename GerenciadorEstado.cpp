@@ -27,9 +27,6 @@ void GerenciadorEstado::execute()
 }
 */
 
-
-//oi
-
 void GerenciadorEstado::handleEvent()
 {
 	if (!stack.empty()) {
