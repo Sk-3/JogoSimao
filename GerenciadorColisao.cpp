@@ -1,10 +1,16 @@
 #include "GerenciadorColisao.h"
 #include <iostream>
-GerenciadorColisao::GerenciadorColisao()
+GerenciadorColisao::GerenciadorColisao():Ente()
+{
+}
+GerenciadorColisao::GerenciadorColisao(std::vector<Character*>* characters)
 	:Ente()
 {
-	pPlayer = Player2::getPlayer(); 
+	this->characters = characters;
+	ppPlayer = Player2::getPlayer(); 
 }
+
+
 
 GerenciadorColisao::~GerenciadorColisao()
 {
@@ -13,22 +19,29 @@ GerenciadorColisao::~GerenciadorColisao()
 
 void GerenciadorColisao::windowColision()
 {
-	sf::FloatRect playerBounds = pPlayer->getBounds();
+	for (const auto& charact : *characters) {
+		sf::FloatRect playerBounds = charact->getBounds();
 
-	//left colison
-	if (playerBounds.left < 0.f) {
-		pPlayer->hitLeft();
+		//left colison
+		if (playerBounds.left < 0.f) {
+			charact->hitLeft();
+		}
+		//right colision
+		else if (playerBounds.left + playerBounds.width > pGerGraphic->getWindow()->getSize().x) {
+			charact->hitRight();
+		}
+		//top colision
+		if (playerBounds.top < 0.f) {
+			charact->hitTop();
+		}
+		//bottom colision
+		else if (playerBounds.top + playerBounds.height > pGerGraphic->getWindow()->getSize().y) {
+			charact->hitGround();
+		}
 	}
-	//right colision
-	else if (playerBounds.left + playerBounds.width > pGerGraphic->getWindow()->getSize().x) {
-		pPlayer->hitRight();
-	}
-	//top colision
-	if (playerBounds.top < 0.f) {
-		pPlayer->hitTop();
-	}
-	//bottom colision
-	else if (playerBounds.top + playerBounds.height > pGerGraphic->getWindow()->getSize().y) {
-		pPlayer->hitGround();
-	}
+
+
+
+
+
 }

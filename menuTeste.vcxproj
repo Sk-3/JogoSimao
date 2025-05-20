@@ -146,6 +146,9 @@
     <ClCompile Include="GerenciadorEstado.cpp" />
     <ClCompile Include="GerenciadorGrafico.cpp" />
     <ClCompile Include="Gravidade.cpp" />
+    <ClCompile Include="Inimigo.cpp" />
+    <ClCompile Include="Lista.cpp" />
+    <ClCompile Include="ListaEntidades.cpp" />
     <ClCompile Include="main.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Felipe\Documents\menuTeste\SFML-2.6.1\include</AdditionalIncludeDirectories>
     </ClCompile>
@@ -179,6 +182,9 @@
     <ClInclude Include="GerenciadorEstado.h" />
     <ClInclude Include="GerenciadorGrafico.h" />
     <ClInclude Include="Gravidade.h" />
+    <ClInclude Include="Inimigo.h" />
+    <ClInclude Include="Lista.h" />
+    <ClInclude Include="ListaEntidades.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MenuPrincipal.h" />
     <ClInclude Include="MenuSelectLvl.h" />

@@ -1,11 +1,14 @@
 #include "Fase2.h"
 
 Fase2::Fase2():
-GameState(), gravity(&characters), colision()
+GameState(), gravity(&characters), colision(&characters)
 {
 	
 	pPlayer2 = Player2::getPlayer();
 	characters.push_back(pPlayer2);
+	//characters.push_back(inimigo1);
+	characters.push_back(new Inimigo);
+
 }
 
 Fase2::~Fase2()
@@ -16,7 +19,9 @@ Fase2::~Fase2()
 void Fase2::draw()
 {
 	window->clear();
-	pPlayer2->draw();
+	for (auto const& charact : characters) {
+		charact->draw();
+	}
 	window->draw(stats);
 }
 
@@ -68,7 +73,9 @@ void Fase2::handleEvent()
 void Fase2::update()
 {
 
-	pPlayer2->update();
+	for (auto const& charact : characters) {
+		charact->update();
+	}
 	gravity.aplyGravity();
 	for (const auto& character : characters) {
 		character->move();

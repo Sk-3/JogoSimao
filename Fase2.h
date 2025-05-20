@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Player2.h"
+#include "Inimigo.h"
 #include <vector>
 #include "Gravidade.h"
 #include "Plataforma.h"

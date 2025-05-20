@@ -93,12 +93,12 @@ void Player2::hitTop()
 void Player2::hitRight()
 {
 	jumps = 1;
-	shape.setPosition(pGerGraphic->getWindow()->getSize().x - playerBounds.width, playerBounds.top);
+	shape.setPosition(pGerGraphic->getWindow()->getSize().x - playerBounds.width, playerBounds.top + speed.y);
 	speed.x = 0;
 }
 void Player2::hitLeft() {
 	jumps = 1;
-	shape.setPosition(0.f, playerBounds.top);
+	shape.setPosition(0.f, playerBounds.top + speed.y);
 	speed.x = 0; 
 }
 void Player2::hitGround()
@@ -106,12 +106,7 @@ void Player2::hitGround()
 	
 	jumps = 2;
 	speed.y = 0; 
-	shape.setPosition(playerBounds.left, pGerGraphic->getWindow()->getSize().y - playerBounds.height);
-}
-
-void Player2::draw()
-{
-	pGerGraphic->getWindow()->draw(shape);
+	shape.setPosition(playerBounds.left + speed.x, pGerGraphic->getWindow()->getSize().y - playerBounds.height);
 }
 
 void Player2::resetPlayer()

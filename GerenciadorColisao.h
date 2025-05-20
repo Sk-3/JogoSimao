@@ -6,9 +6,11 @@
 class GerenciadorColisao : public Ente
 {
 private:
-	Player2* pPlayer;
+	std::vector<Character*>* characters;
+	Player2* ppPlayer;
 public:
 	GerenciadorColisao();
+	GerenciadorColisao(std::vector<Character*>* characters);
 	~GerenciadorColisao();
 	void windowColision();
 };

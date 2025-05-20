@@ -19,15 +19,14 @@ public:
 
 	void stopAxisX();
 
-	void hitTop();
-	void hitRight();
-	void hitLeft();
-	void hitGround();
+	void hitTop() override;
+	void hitRight() override;
+	void hitLeft() override;
+	void hitGround() override;
 
-	const sf::FloatRect getBounds();
+	const sf::FloatRect getBounds() override;
 
-	void update();
-	void draw();
+	void update() override;
 	void resetPlayer();
 };
 
