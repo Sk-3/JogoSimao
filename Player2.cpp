@@ -50,12 +50,25 @@ void Player2::moveRight()
 
 void Player2::dash()
 {
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		speed.x = -20;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		speed.x = 20;
+	}
+	else {
+		speed.x = 0;
+		speed.y = 0;
+	}
+
+	/*
 	if (speed.x >= 0) {
 		speed.x = 20;
 	}
 	else {
 		speed.x = -20;
-	}
+	}*/
 }
 
 void Player2::stopAxisX()
