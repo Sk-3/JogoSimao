@@ -8,7 +8,7 @@ Player2::Player2() {
 	shape.setSize(sf::Vector2f(100.f, 100.f));
 	shape.setFillColor(sf::Color::Blue);
 	shape.setPosition(position);
-	playerBounds = shape.getGlobalBounds();
+	characterBounds = shape.getGlobalBounds();
 }
 Player2* Player2::getPlayer()
 {
@@ -86,19 +86,19 @@ void Player2::stopAxisX()
 void Player2::hitTop()
 {
 	
-	shape.setPosition(playerBounds.left, 0.f);
+	shape.setPosition(characterBounds.left, 0.f);
 	speed.y = 0;
 	
 }
 void Player2::hitRight()
 {
 	jumps = 1;
-	shape.setPosition(pGerGraphic->getWindow()->getSize().x - playerBounds.width, playerBounds.top + speed.y);
+	shape.setPosition(pGerGraphic->getWindow()->getSize().x - characterBounds.width, characterBounds.top + speed.y);
 	speed.x = 0;
 }
 void Player2::hitLeft() {
 	jumps = 1;
-	shape.setPosition(0.f, playerBounds.top + speed.y);
+	shape.setPosition(0.f, characterBounds.top + speed.y);
 	speed.x = 0; 
 }
 void Player2::hitGround()
@@ -106,7 +106,7 @@ void Player2::hitGround()
 	
 	jumps = 2;
 	speed.y = 0; 
-	shape.setPosition(playerBounds.left + speed.x, pGerGraphic->getWindow()->getSize().y - playerBounds.height);
+	shape.setPosition(characterBounds.left + speed.x, pGerGraphic->getWindow()->getSize().y - characterBounds.height);
 }
 
 void Player2::resetPlayer()
@@ -115,11 +115,9 @@ void Player2::resetPlayer()
 	health = 10;
 	speed = sf::Vector2f(0, 0);
 }
-const sf::FloatRect Player2::getBounds() {
-	return playerBounds; 
-}
+
 
 void Player2::update() {
-	playerBounds = shape.getGlobalBounds();
+	characterBounds = shape.getGlobalBounds();
 }
 Player2* Player2::pPlayer = NULL;
