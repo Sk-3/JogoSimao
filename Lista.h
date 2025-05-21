@@ -4,8 +4,8 @@ class Lista
 {
 public:
 	class Elemento {
-	public:
 	private:
+	public:
 
 	};
 private:

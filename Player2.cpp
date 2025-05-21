@@ -1,5 +1,6 @@
 #include "Player2.h"
 
+
 Player2::Player2() {
 	jumps = 2;
 	position = sf::Vector2f(300.f, 0.f);
@@ -8,7 +9,7 @@ Player2::Player2() {
 	shape.setSize(sf::Vector2f(100.f, 100.f));
 	shape.setFillColor(sf::Color::Blue);
 	shape.setPosition(position);
-	characterBounds = shape.getGlobalBounds();
+	entityBounds = shape.getGlobalBounds();
 }
 Player2* Player2::getPlayer()
 {
@@ -61,14 +62,6 @@ void Player2::dash()
 		speed.x = 0;
 		speed.y = 0;
 	}
-
-	/*
-	if (speed.x >= 0) {
-		speed.x = 20;
-	}
-	else {
-		speed.x = -20;
-	}*/
 }
 
 void Player2::stopAxisX()
@@ -99,19 +92,19 @@ void Player2::stopAxisX()
 void Player2::hitTop()
 {
 	
-	shape.setPosition(characterBounds.left, 0.f);
+	shape.setPosition(entityBounds.left, 0.f);
 	speed.y = 0;
 	
 }
 void Player2::hitRight()
 {
 	jumps = 1;
-	shape.setPosition(pGerGraphic->getWindow()->getSize().x - characterBounds.width, characterBounds.top + speed.y);
+	shape.setPosition(pGerGraphic->getWindow()->getSize().x - entityBounds.width, entityBounds.top + speed.y);
 	speed.x = 0;
 }
 void Player2::hitLeft() {
 	jumps = 1;
-	shape.setPosition(0.f, characterBounds.top + speed.y);
+	shape.setPosition(0.f, entityBounds.top + speed.y);
 	speed.x = 0; 
 }
 void Player2::hitGround()
@@ -119,7 +112,7 @@ void Player2::hitGround()
 	
 	jumps = 2;
 	speed.y = 0; 
-	shape.setPosition(characterBounds.left + speed.x, pGerGraphic->getWindow()->getSize().y - characterBounds.height);
+	shape.setPosition(entityBounds.left + speed.x, pGerGraphic->getWindow()->getSize().y - entityBounds.height);
 }
 
 void Player2::resetPlayer()
@@ -131,6 +124,7 @@ void Player2::resetPlayer()
 
 
 void Player2::update() {
-	characterBounds = shape.getGlobalBounds();
+	entityBounds = shape.getGlobalBounds();
+	//characterBounds = shape.getGlobalBounds();
 }
 Player2* Player2::pPlayer = NULL;

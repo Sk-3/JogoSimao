@@ -1,5 +1,12 @@
 #include "Inimigo.h"
 
+Inimigo::Inimigo(sf::Vector2f size, sf::Vector2f pos)
+	:Character(size, pos)
+{
+	nivel_maldade = 0;
+	shape.setFillColor(sf::Color::Red);
+}
+
 Inimigo::Inimigo()
 {
 	nivel_maldade = 0;

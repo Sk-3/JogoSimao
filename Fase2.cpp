@@ -3,12 +3,12 @@
 Fase2::Fase2():
 GameState(), gravity(&characters), colision(&characters)
 {
-	
 	pPlayer2 = Player2::getPlayer();
 	characters.push_back(pPlayer2);
-	//characters.push_back(inimigo1);
-	characters.push_back(new Inimigo);
-
+	characters.push_back(new Inimigo());
+	characters.push_back(new Inimigo(sf::Vector2f(200.f, 200.f), sf::Vector2f(150.f, 150.f)));
+	//characters.push_back(new Inimigo(sf::Vector2f(100.f, 200.f), sf::Vector2f(900.f, 150.f)));
+	//characters.push_back(new Inimigo(sf::Vector2f(50.f, 90.f), sf::Vector2f(600.f, 150.f)));
 }
 
 Fase2::~Fase2()

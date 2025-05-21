@@ -3,6 +3,7 @@
 class GerenciadorGrafico
 {
 private:
+	
 	sf::Font* font;
 	sf::RenderWindow* window;
 	sf::Vector2i mousePos;
@@ -10,6 +11,7 @@ private:
 	GerenciadorGrafico();
 	
 public:
+	sf::Time t;
 	static GerenciadorGrafico* getGerGraphic();
 	~GerenciadorGrafico();
 
