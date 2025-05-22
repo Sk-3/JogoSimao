@@ -79,13 +79,15 @@ void GerenciadorEstado::update()
 
 void GerenciadorEstado::draw()
 {
+
+
 	if(!stack.empty()){
 		//stack.back()->draw();
-		int i;
 		
-		for (i = 0; i < stack.size(); i++) {
-			stack[i]->draw();
+		for (const auto& state : stack) {
+			state->draw();
 		}
+	
 	}
 }
 

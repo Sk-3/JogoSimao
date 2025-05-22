@@ -11,6 +11,7 @@ class Fase2 : public GameState
 private:
 	GerenciadorColisao colision;
 	Player2* pPlayer2;
+	std::vector<Obstaculo*> obstaculos;
 	std::vector<Character*> characters;
 	Gravidade gravity; 
 public:

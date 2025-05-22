@@ -1,22 +1,26 @@
 #include "Plataforma.h"
 
+Plataforma::Plataforma(sf::Vector2f size, sf::Vector2f pos)
+	:Obstaculo(size, pos)
+{
+}
+
 Plataforma::Plataforma()
 {
-	height = shape.getSize().y;
-	width = shape.getSize().x;
+
 }
 
 Plataforma::~Plataforma()
 {
 }
 
-void Plataforma::obstacular()
+void Plataforma::obstacular(Player2* pPlayer)
 {
 }
 
 void Plataforma::draw()
 {
-
+	pGerGraphic->getWindow()->draw(shape);
 }
 
 void Plataforma::update() {

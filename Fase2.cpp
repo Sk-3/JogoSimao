@@ -7,8 +7,8 @@ GameState(), gravity(&characters), colision(&characters)
 	characters.push_back(pPlayer2);
 	characters.push_back(new Inimigo());
 	characters.push_back(new Inimigo(sf::Vector2f(200.f, 200.f), sf::Vector2f(150.f, 150.f)));
-	//characters.push_back(new Inimigo(sf::Vector2f(100.f, 200.f), sf::Vector2f(900.f, 150.f)));
-	//characters.push_back(new Inimigo(sf::Vector2f(50.f, 90.f), sf::Vector2f(600.f, 150.f)));
+
+	obstaculos.push_back(new Plataforma(sf::Vector2f(1280.f, 50.f), sf::Vector2f(0, 670)));
 }
 
 Fase2::~Fase2()
@@ -19,6 +19,9 @@ Fase2::~Fase2()
 void Fase2::draw()
 {
 	window->clear();
+	for (auto const& obst : obstaculos) {
+		obst->draw();
+	}
 	for (auto const& charact : characters) {
 		charact->draw();
 	}
@@ -72,6 +75,8 @@ void Fase2::handleEvent()
 
 void Fase2::update()
 {
+	
+
 
 	for (auto const& charact : characters) {
 		charact->update();

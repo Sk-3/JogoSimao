@@ -2,14 +2,14 @@
 #include "Obstaculo.h"
 class Plataforma : public Obstaculo
 {
-private:
-	float height;
-	float width;
 public:
+	Plataforma(sf::Vector2f size, sf::Vector2f pos);
 	Plataforma(); 
 	~Plataforma(); 
-	virtual void obstacular();
+	virtual void obstacular(Player2* pPlayer) override;
 	void draw();
 	void update();
 };
+
+
 
