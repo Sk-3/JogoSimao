@@ -10,11 +10,11 @@ public:
 	~Fase1();
 
 	void updateStats();
-	virtual void mouseClick();
-	virtual void draw() override;
-	virtual void update() override;
+	void mouseClick();
+	void draw() override;
+	void update() override;
 
-	virtual void updateCont();
-	virtual void updateEnemies();
+	void updateCont();
+	void updateEnemies();
 };
 

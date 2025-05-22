@@ -57,11 +57,6 @@ void Character::move()
 	shape.move(speed);
 }
 
-sf::RectangleShape Character::getShape()
-{
-	return shape;
-}
-
 void Character::changeSpeed(sf::Vector2f addSpeed)
 {
 	speed += addSpeed;

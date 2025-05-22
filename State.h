@@ -13,9 +13,10 @@ protected:
 	sf::Vector2i* mousePos;
 public:
 	State();
+	virtual ~State();
 	const Actions getAction() const;
 	void setAction(Actions action);
-	virtual ~State();
+	
 	virtual void handleEvent() = 0;
 	virtual void update() = 0;
 	virtual void draw() = 0;

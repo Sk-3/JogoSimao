@@ -17,7 +17,6 @@ public:
 
 	void move();
 
-	sf::RectangleShape getShape(); 
 	void changeSpeed(sf::Vector2f addSpeed);
 	
 	virtual void hitTop();

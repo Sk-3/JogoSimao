@@ -1,5 +1,58 @@
-﻿  Gerando código
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-  All 600 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+﻿  Character.cpp
+  Fase2.cpp
+  GerenciadorColisao.cpp
+  GerenciadorEstado.cpp
+  Gravidade.cpp
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Gravidade.cpp(6,19): warning C4305: '=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Gravidade.cpp(6,19): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Gravidade.cpp(6,19): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Gravidade.cpp(6,19): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Gravidade.cpp(6,19): warning C4305:         ]
+  Inimigo.cpp
+  Obstaculo.cpp
+  Plataforma.cpp
+  Player2.cpp
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(34,13): warning C4305: '+=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(34,13): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(34,13): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(34,13): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(34,13): warning C4305:         ]
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(41,14): warning C4305: '-=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(41,14): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(41,14): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(41,14): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(41,14): warning C4305:         ]
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(48,14): warning C4305: '+=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(48,14): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(48,14): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(48,14): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(48,14): warning C4305:         ]
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(70,14): warning C4305: '-=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(70,14): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(70,14): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(70,14): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(70,14): warning C4305:         ]
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(73,14): warning C4305: '+=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(73,14): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(73,14): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(73,14): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(73,14): warning C4305:         ]
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(81,16): warning C4305: '-=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(81,16): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(81,16): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(81,16): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(81,16): warning C4305:         ]
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(88,15): warning C4305: '+=': truncamento de 'double' para 'T'
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(88,15): warning C4305:         with
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(88,15): warning C4305:         [
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(88,15): warning C4305:             T=float
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Player2.cpp(88,15): warning C4305:         ]
+  Principal.cpp
+  buttonObserver.cpp
+  main.cpp
+  Gerando código
+  0 of 600 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    10 functions had inline decision re-evaluated but remain unchanged
   Finalizada a geração de código
   menuTeste.vcxproj -> C:\Users\Felipe\Documents\menuTeste\Release\menuTeste.exe
