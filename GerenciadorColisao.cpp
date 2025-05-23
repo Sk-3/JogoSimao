@@ -73,13 +73,6 @@ void GerenciadorColisao::colision()
 					}
 				}
 
-
-
-
-
-
-
-
 			}
 			else {
 				obstac->setIsColiding(0);

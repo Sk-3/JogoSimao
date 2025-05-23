@@ -76,7 +76,7 @@ void Character::hitGround(sf::FloatRect obstaculo)
 {
 	sf::FloatRect characterBounds = shape.getGlobalBounds();
 	speed.y = 0;
-	shape.setPosition(characterBounds.left + speed.x, (obstaculo.top - characterBounds.height));
+	shape.setPosition(characterBounds.left, (obstaculo.top - characterBounds.height));
 
 	jumps = 2;
 }

@@ -3,12 +3,22 @@ Fase2::Fase2():
 GameState(), gravity(&characters), colision(&characters, &obstaculos)
 {
 	pPlayer2 = Player2::getPlayer();
-	characters.push_back(pPlayer2);
 	characters.push_back(new Inimigo());
 	//characters.push_back(new Inimigo(sf::Vector2f(200.f, 200.f), sf::Vector2f(150.f, 150.f)));
 
+	
+	characters.push_back(pPlayer2);
+	
+	
 	obstaculos.push_back(new Plataforma(sf::Vector2f(1280.f, 50.f), sf::Vector2f(0, 670)));
-	obstaculos.push_back(new Plataforma(sf::Vector2f(50.f, 50.f), sf::Vector2f(200, 200)));
+
+	int plat = (1280 / 50) + 1;
+	for (int i = 0; i <= plat; i++) {
+		obstaculos.push_back(new Plataforma(sf::Vector2f(50.f, 50.f), sf::Vector2f(50 * i, 670)));
+	}
+
+
+	obstaculos.push_back(new Plataforma(sf::Vector2f(60.f, 60.f), sf::Vector2f(200, 200)));
 
 	obstaculos.push_back(new Plataforma(sf::Vector2f(100.f, 100.f), sf::Vector2f(500.f, 500.f)));
 
