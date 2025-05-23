@@ -2,7 +2,7 @@
 
 const sf::FloatRect Entity::getBounds()
 {
-	return entityBounds;
+	return shape.getGlobalBounds();
 }
 
 Entity::Entity():

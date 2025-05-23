@@ -1,6 +1,5 @@
 #include "Player2.h"
 
-
 Player2::Player2() {
 	jumps = 2;
 	position = sf::Vector2f(300.f, 0.f);
@@ -88,31 +87,6 @@ void Player2::stopAxisX()
 			speed.x += 0.2;
 		}
 	}
-}
-void Player2::hitTop()
-{
-	
-	shape.setPosition(entityBounds.left, 0.f);
-	speed.y = 0;
-	
-}
-void Player2::hitRight()
-{
-	jumps = 1;
-	shape.setPosition(pGerGraphic->getWindow()->getSize().x - entityBounds.width, entityBounds.top + speed.y);
-	speed.x = 0;
-}
-void Player2::hitLeft() {
-	jumps = 1;
-	shape.setPosition(0.f, entityBounds.top + speed.y);
-	speed.x = 0; 
-}
-void Player2::hitGround()
-{
-	
-	jumps = 2;
-	speed.y = 0; 
-	shape.setPosition(entityBounds.left + speed.x, pGerGraphic->getWindow()->getSize().y - entityBounds.height);
 }
 
 void Player2::resetPlayer()

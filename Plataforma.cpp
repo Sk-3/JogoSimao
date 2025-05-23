@@ -24,5 +24,11 @@ void Plataforma::draw()
 }
 
 void Plataforma::update() {
-
+	entityBounds = shape.getGlobalBounds();
+	if (isColiding) {
+		shape.setFillColor(sf::Color::Red);
+	}
+	else {
+		shape.setFillColor(sf::Color::White);
+	}
 }

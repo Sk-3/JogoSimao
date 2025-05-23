@@ -3,7 +3,6 @@
 class Player2 : public Character
 {
 private:
-	int jumps;
 	static Player2* pPlayer;
 	Player2();
 	float maxSpeed;
@@ -18,10 +17,10 @@ public:
 
 	void stopAxisX();
 
-	void hitTop() override;
+	/*void hitTop() override;
 	void hitRight() override;
 	void hitLeft() override;
-	void hitGround() override;
+	void hitGround() override;*/
 
 	void update() override;
 	void resetPlayer();
