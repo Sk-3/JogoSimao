@@ -51,16 +51,16 @@ void GerenciadorColisao::colision()
 					if (charCenterX < obstCenterX) {
 						// Personagem está mais à esquerda que o centro do obstáculo,
 						// então o lado DIREITO do personagem colidiu com o lado ESQUERDO do obstáculo.
-						charact->hitRight(obstaculoBounds); // hitRight deve mover o personagem para a esquerda do obstáculo
+						charact->hitRight(obstaculoBounds); 
 					}
 					else {
 						// Personagem está mais à direita que o centro do obstáculo,
 						// então o lado ESQUERDO do personagem colidiu com o lado DIREITO do obstáculo.
-						charact->hitLeft(obstaculoBounds); // hitLeft2 deve mover o personagem para a direita do obstáculo
+						charact->hitLeft(obstaculoBounds);
 					}
 				}
 				else {
-					// Colisão predominantemente vertical (ou igual, priorize vertical)
+					
 					if (charCenterY < obstCenterY) {
 						// Personagem está mais acima que o centro do obstáculo,
 						// então a parte de BAIXO do personagem colidiu com a parte de CIMA do obstáculo.
