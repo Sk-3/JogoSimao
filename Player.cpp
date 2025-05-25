@@ -1,72 +1,101 @@
 #include "Player.h"
 
-Player* Player::pPlayer = NULL;
+Player::Player() {
+	jumps = 2;
+	position = sf::Vector2f(300.f, 0.f);
 
-
-Player::Player():
-	Ente()
+	maxSpeed = 6;
+	shape.setSize(sf::Vector2f(100.f, 100.f));
+	shape.setFillColor(sf::Color::Blue);
+	shape.setPosition(position);
+}
+sf::Vector2f Player::getPosition()
 {
-	health = 10;
-	points = 0;
-	streak = 1;
+	return shape.getPosition();
 }
 
-Player::~Player()
+void Player::moveUp()
 {
-}
-
-
-Player* Player::getPlayer()
-{
-	if (!Player::pPlayer) {
-		pPlayer = new Player();
+	if (jumps) {
+		speed.y = -8;
+		jumps--;
 	}
-	return pPlayer;
+	
+	
 }
+
+void Player::moveDown()
+{
+	speed.y += 0.3;
+}
+
+void Player::moveLeft()
+{
+	if(speed.x >= -maxSpeed) {
+		speed.x -= 0.4;
+	}
+}
+
+void Player::moveRight()
+{
+	if (speed.x <= maxSpeed) {
+		speed.x += 0.4;
+	}
+}
+
+void Player::dash()
+{
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		speed.x = -20;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		speed.x = 20;
+	}
+	else {
+		speed.x = 0;
+		speed.y = 0;
+	}
+}
+
+void Player::stopAxisX()
+{
+	if (speed.x > maxSpeed) {
+		speed.x -= 0.4;
+	}
+	else if (speed.x < -maxSpeed) {
+		speed.x += 0.4;
+	}
+
+	if (speed.x != 0) {
+		if (speed.x >= 0) {
+			if (speed.x - 0.2 < 0) {
+				speed.x = 0;
+			}else{
+				speed.x -= 0.2;
+			}
+		}
+		else {
+			if (speed.x + 0.2 > 0) {
+				speed.x = 0;
+			}
+			speed.x += 0.2;
+		}
+	}
+}
+
 void Player::resetPlayer()
 {
+	shape.setPosition(position);
 	health = 10;
-	points = 0;
-	streak = 1;
+	speed = sf::Vector2f(0, 0);
+}
+
+void Player::executar()
+{
+	//move o player a atualiza a posição da camera
+	move();
+	//view.setCenter(shape.getPosition());
 	
-
+	pGerGraphic->getWindow()->draw(shape);
 }
-bool Player::isAlive()
-{
-	if (health <= 0) {
-		return 0;
-	}
-	return 1;
-}
-void Player::resetStreak()
-{
-	streak = 1;
-}
-
-void Player::getHit()
-{
-	health -= 10;
-}
-
-
-void Player::increasePoints()
-{
-	points += streak;
-	streak++;
-}
-
-const int Player::getHealth()
-{
-	return health;
-}
-
-const int Player::getStreak()
-{
-	return streak;
-}
-
-const int Player::getPoints()
-{
-	return points;
-}
-

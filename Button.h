@@ -20,8 +20,9 @@ public:
 	const Actions getAction();
 	void setAction(Actions act);
 	sf::RectangleShape getRectangle();
-	void draw();
 
 	void action();
+
+	void executar();
 };
 

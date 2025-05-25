@@ -1,25 +1,29 @@
 #pragma once
-#include "Ente.h"
-
-class Player : public Ente
+#include "Character.h"
+class Player : public Character
 {
 private:
-	int points;
-	int streak;
-	int health;
-	static Player* pPlayer;
-	Player();
+	
+	
+	float maxSpeed;
+	sf::Vector2f center;
 public:
-	static Player* getPlayer();
-	void resetPlayer();
-	bool isAlive();
-	void resetStreak();
-	void getHit();
-	void increasePoints();
-	const int getHealth();
-	const int getStreak();
-	const int getPoints();
+	Player();
+	
+	sf::Vector2f getPosition();
+	
+	//Adicionam velocidade ao vetor de velocidade do jogador
+	void moveUp();
+	void moveDown();
+	void moveLeft();
+	void moveRight();
 
-	~Player();
+
+	void dash();
+	void stopAxisX();
+	void executar(); 
+	void resetPlayer();
 };
+
+
 

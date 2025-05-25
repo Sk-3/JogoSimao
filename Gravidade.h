@@ -7,6 +7,7 @@ class Gravidade
 	std::vector<Character*>* characters;
 public:
 	Gravidade(std::vector<Character*>* characters);
+	void executar();
 	void aplyGravity();
 };
 

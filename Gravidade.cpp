@@ -7,6 +7,11 @@ Gravidade::Gravidade(std::vector<Character*>* characters)
 	this->characters = characters;
 }
 
+void Gravidade::executar()
+{
+	aplyGravity();
+}
+
 void Gravidade::aplyGravity()
 {
 	for (const auto &character : *characters) {

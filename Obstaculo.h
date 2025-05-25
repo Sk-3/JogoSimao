@@ -1,6 +1,6 @@
 #pragma once
 #include "Entity.h"
-#include "Player2.h"
+#include "Player.h"
 class Obstaculo : public Entity
 {
 protected:
@@ -11,7 +11,7 @@ public:
 	Obstaculo();
 	~Obstaculo();
 	void setIsColiding(bool col);
-	virtual void update() override;
-	virtual void obstacular(Player2* pPlayer) = 0;
+	virtual void obstacular(Player* pPlayer) = 0;
+	virtual void executar() = 0; 
 };
 

@@ -22,15 +22,6 @@ void Obstaculo::setIsColiding(bool col)
 	isColiding = col;
 }
 
-
-void Obstaculo::update()
-{
-	
-}
-
-
-
-
-void Obstaculo::obstacular(Player2* pPlayer)
+void Obstaculo::obstacular(Player* pPlayer)
 {
 }

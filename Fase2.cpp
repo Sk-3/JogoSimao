@@ -1,77 +1,75 @@
 #include "Fase2.h"
 Fase2::Fase2():
-GameState(), gravity(&characters), colision(&characters, &obstaculos)
+GameState()
 {
-	pPlayer2 = Player2::getPlayer();
-	characters.push_back(new Inimigo());
-	//characters.push_back(new Inimigo(sf::Vector2f(200.f, 200.f), sf::Vector2f(150.f, 150.f)));
-
 	
-	characters.push_back(pPlayer2);
-	
-	
-	obstaculos.push_back(new Plataforma(sf::Vector2f(1280.f, 50.f), sf::Vector2f(0, 670)));
-
 	int plat = (1280 / 50) + 1;
 	for (int i = 0; i <= plat; i++) {
 		obstaculos.push_back(new Plataforma(sf::Vector2f(50.f, 50.f), sf::Vector2f(50 * i, 670)));
 	}
-
-
 	obstaculos.push_back(new Plataforma(sf::Vector2f(60.f, 60.f), sf::Vector2f(200, 200)));
-
 	obstaculos.push_back(new Plataforma(sf::Vector2f(100.f, 100.f), sf::Vector2f(500.f, 500.f)));
 
 }
 
 Fase2::~Fase2()
 {
-	pPlayer2->resetPlayer();
+	for (auto& obst : obstaculos) {
+		delete obst;
+	}
+
 }
 
-void Fase2::draw()
+void Fase2::executar()
 {
 	window->clear();
+	handleEvent();
+	
+	pGerGraphic->getWindow()->setView(view);
+	view.setCenter(player->getPosition());
 	for (auto const& obst : obstaculos) {
-		obst->draw();
+		obst->executar();
 	}
+
 	for (auto const& charact : characters) {
-		charact->draw();
+		charact->executar();
 	}
-	window->draw(stats);
+
+	colision.executar();
+	gravity.executar();
 }
 
 void Fase2::handleEvent()
 {
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-		pPlayer2->moveLeft();
+		player->moveLeft();
 	}
 	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
-		pPlayer2->moveRight();
+		player->moveRight();
 	}
 	else {
-		pPlayer2->stopAxisX();
+		player->stopAxisX();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
 
-		pPlayer2->moveUp();
+		player->moveUp();
 	
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-		pPlayer2->moveDown();
+		player->moveDown();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) {
-		pPlayer2->dash();
+		player->dash();
 	}
 
 	sf::Event ev;
 	while (window->pollEvent(ev)) {
 		switch (ev.type) {
 		case sf::Event::Closed:
-			setAction(Actions::VOLTAR_1_MENU);
+			pGerGraphic->getWindow()->close();
 			break;
 		case sf::Event::KeyPressed:
 			if (ev.key.code == sf::Keyboard::Escape) {
@@ -81,38 +79,12 @@ void Fase2::handleEvent()
 			break;
 		case sf::Event::MouseButtonPressed:
 			if (ev.mouseButton.button == sf::Mouse::Left) {
-				mouseClick();
+				//mouseClick();
 			}
 		}
 	}
 }
 
 
-void Fase2::update()
-{
-	for (auto const& charact : characters) {
-		charact->update();
-	}
-	for (const auto& character : characters) {
-		character->move();
-	}
-
-	for (const auto& obstac : obstaculos) {
-		obstac->update();
-	}
-
-	colision.colision();
-
-	
-	gravity.aplyGravity();
-
-
-
-	
-
-	updateStats();
-
-
-}
 
 

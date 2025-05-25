@@ -14,3 +14,4 @@ MenuSelectLvl::~MenuSelectLvl()
 	delete level1;
 	delete level2;
 }
+

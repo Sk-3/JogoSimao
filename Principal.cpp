@@ -17,9 +17,7 @@ Principal::~Principal()
 void Principal::executar() {
 	
 	while (gerGraphic->isOpen()) {
-		gerEstado->handleEvent();
-		gerEstado->update();
-		gerEstado->draw();
+		gerEstado->executar();
 		gerGraphic->display();
 	}
 }

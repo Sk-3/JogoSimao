@@ -3,14 +3,15 @@
 
 GerenciadorGrafico* GerenciadorGrafico::pGerGraphic = NULL;
 GerenciadorGrafico::GerenciadorGrafico()
+	:winWidth(1280.f),
+	winHeight(720.f),
+	standartView(sf::FloatRect(0.f, 0.f,winWidth, winHeight))
 {
-
-	window = new sf::RenderWindow(sf::VideoMode(1280, 720), "Menu Teste", sf::Style::Close | sf::Style::Titlebar);
+	window = new sf::RenderWindow(sf::VideoMode(winWidth, winHeight), "Menu Teste", sf::Style::Close | sf::Style::Titlebar);
 	font = new sf::Font();
 	if (!font->loadFromFile("C://Users//Felipe//Documents//menuTeste//menuTeste//TypeLightSans-KV84p.otf")) {
 		std::cerr << "Erro ao carregar a fonte";
 	}
-
 }
 
 GerenciadorGrafico::~GerenciadorGrafico()
@@ -29,6 +30,11 @@ bool GerenciadorGrafico::isOpen()
 	return window->isOpen();
 }
 
+const sf::FloatRect GerenciadorGrafico::getStdView() const
+{
+	return standartView;
+}
+
 GerenciadorGrafico* GerenciadorGrafico::getGerGraphic()
 {
 	if (!pGerGraphic) {
@@ -36,14 +42,10 @@ GerenciadorGrafico* GerenciadorGrafico::getGerGraphic()
 	}
 	return pGerGraphic;
 }
-
-
 sf::Vector2i* GerenciadorGrafico::getMousePosition()
 {
 	return &mousePos;
 }
-
-
 sf::RenderWindow* GerenciadorGrafico::getWindow(){
 	return window;
 }

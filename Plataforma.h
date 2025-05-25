@@ -6,9 +6,8 @@ public:
 	Plataforma(sf::Vector2f size, sf::Vector2f pos);
 	Plataforma(); 
 	~Plataforma(); 
-	virtual void obstacular(Player2* pPlayer) override;
-	void draw();
-	void update();
+	virtual void obstacular(Player* pPlayer);
+	void executar();
 };
 
 

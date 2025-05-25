@@ -1,21 +1,26 @@
 #pragma once
 #include "State.h"
-#include "cuboNormal.h"
 #include "Player.h"
+#include "Gravidade.h"
+#include "Plataforma.h"
+#include "GerenciadorColisao.h"
 #include <sstream>
 
 class GameState : public State
 {
 protected:
-	sf::Text stats;
+	sf::View view;
+	
+	GerenciadorColisao colision;
+	Gravidade gravity;
+	
 	Player* player;
+	std::vector<Obstaculo*> obstaculos;
+	std::vector<Character*> characters;
+	
 public:
 	~GameState();
 	GameState();
-	virtual void updateStats();
-	virtual void mouseClick();
-	virtual void handleEvent() override;
-	virtual void draw() = 0;
-	virtual void update() = 0;
-
+	virtual void handleEvent() = 0;
+	virtual void executar() = 0;
 };

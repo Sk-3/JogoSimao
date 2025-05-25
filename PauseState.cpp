@@ -1,10 +1,6 @@
 #include "PauseState.h"
-
-
-
 PauseState::PauseState()
 {
-	
 	resume = new Button("resume", sf::Vector2f(300.f, 300.f), Actions::VOLTAR_1_MENU);
 	quit = new Button("Quit", sf::Vector2f(300.f, 400.f), Actions::VOLTAR_2_MENUS);
 
@@ -15,11 +11,4 @@ PauseState::PauseState()
 PauseState::~PauseState() {
 	delete resume;
 	delete quit;
-}
-void PauseState::draw()
-{
-	for (const auto& buttonv : buttonVector) {
-		buttonv->draw();
-	}
-
 }

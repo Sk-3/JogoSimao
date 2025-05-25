@@ -17,3 +17,9 @@ Inimigo::Inimigo()
 Inimigo::~Inimigo() {
 
 }
+
+void Inimigo::executar()
+{
+	move();
+	pGerGraphic->getWindow()->draw(shape);
+}

@@ -9,6 +9,34 @@ menuState::menuState()
 {
 }
 
+void menuState::readButtons()
+{
+	//Se o action atual do botão for diferente de NADA, então mudar o estado atual do estado pro estado do botão
+	for (const auto& x : buttonVector) {
+		if (x->getAction() != Actions::NADA) {
+
+			this->setAction(x->getAction());
+			x->setAction(Actions::NADA);
+
+		}
+	}
+}
+
+void menuState::execButtons()
+{
+	for (const auto& buttons : buttonVector) {
+		buttons->executar();
+	}
+}
+
+void menuState::executar() {
+	pGerGraphic->getWindow()->clear();
+	pGerGraphic->updateMousePosition();
+	handleEvent();
+	readButtons();
+	execButtons();
+}
+
 void menuState::handleEvent()
 {
 	sf::Event ev;
@@ -35,31 +63,6 @@ void menuState::handleEvent()
 			break;
 		}
 	}
-}
-
-void menuState::draw()
-{
-	window->clear();
-	for (const auto& buttonv: buttonVector) {
-		buttonv->draw();
-	}
-
-}
-
-void menuState::update()
-{
-
-	//Se o action atual do botão for diferente de NADA, então mudar o estado atual do estado pro estado do botão
-
-	for (const auto& x : buttonVector) {
-		if (x->getAction() != Actions::NADA) {
-
-			this->setAction(x->getAction());
-			x->setAction(Actions::NADA);
-			
-		}
-	}
-	pGerGraphic->updateMousePosition();
 }
 
 void menuState::mouseClick()

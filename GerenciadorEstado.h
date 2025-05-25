@@ -4,7 +4,6 @@
 #include "Ente.h"
 #include <vector>
 #include "PauseState.h"
-#include "Fase1.h"
 #include "Fase2.h"
 #include "MenuPrincipal.h"
 #include "MenuSelectLvl.h"
@@ -21,7 +20,7 @@ public:
 	void handleEvent();
 	void update();
 	void draw();
-
+	void executar();
 	void pop();
 	void push(State* newState);
 	void clear();

@@ -22,23 +22,24 @@ sf::RectangleShape Button::getRectangle()
 {
 	return buttonRect;
 }
-void Button::draw()
-{
-	pGerGraphic->getWindow()->draw(buttonText);
-	
-}
+
 
 void Button::action()
 {
 	actualAction = buttonAction;
 }
 
+void Button::executar()
+{
+	pGerGraphic->getWindow()->draw(buttonText);
+}
+
 bool Button::getClicked(sf::Vector2i* mousePos)
 {
-	sf::Vector2f mouse;
+	/*sf::Vector2f mouse;
 	mouse.x = (float)mousePos->x;
-	mouse.y = (float)mousePos->y;
-	return buttonRect.getGlobalBounds().contains(mouse);
+	mouse.y = (float)mousePos->y;*/
+	return buttonRect.getGlobalBounds().contains(sf::Vector2f((float)mousePos->x, (float)mousePos->y));
 }
 
 const Actions Button::getAction() {

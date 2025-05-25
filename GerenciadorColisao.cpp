@@ -1,5 +1,9 @@
 #include "GerenciadorColisao.h"
-#include <iostream>
+void GerenciadorColisao::executar()
+{
+	colision();
+	
+}
 GerenciadorColisao::GerenciadorColisao():Ente()
 {
 }
@@ -8,7 +12,6 @@ GerenciadorColisao::GerenciadorColisao(std::vector<Character*>* characters, std:
 {
 	this->obstaculos = obstaculos;
 	this->characters = characters;
-	ppPlayer = Player2::getPlayer();
 }
 
 

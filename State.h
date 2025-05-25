@@ -7,6 +7,7 @@
 class State : public Ente
 {
 protected:
+	sf::View* view;
 	Actions action2;
 	sf::RenderWindow* window;
 	sf::Font* font;
@@ -18,8 +19,7 @@ public:
 	void setAction(Actions action);
 	
 	virtual void handleEvent() = 0;
-	virtual void update() = 0;
-	virtual void draw() = 0;
+	virtual void executar() = 0;
 
 };
 

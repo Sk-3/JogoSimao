@@ -14,21 +14,21 @@ Plataforma::~Plataforma()
 {
 }
 
-void Plataforma::obstacular(Player2* pPlayer)
+void Plataforma::obstacular(Player* pPlayer)
 {
 }
 
-void Plataforma::draw()
+void Plataforma::executar()
 {
-	pGerGraphic->getWindow()->draw(shape);
-}
 
-void Plataforma::update() {
-	entityBounds = shape.getGlobalBounds();
+	//se esta colidindo, muda a cor pra vermelho, caso contrário fica branco
 	if (isColiding) {
 		shape.setFillColor(sf::Color::Red);
 	}
 	else {
 		shape.setFillColor(sf::Color::White);
 	}
+
+	//desenha a plataforma
+	pGerGraphic->getWindow()->draw(shape);
 }

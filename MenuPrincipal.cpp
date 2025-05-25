@@ -19,3 +19,4 @@ MenuPrincipal::~MenuPrincipal()
 	delete quit;
 	delete ranking;
 }
+

@@ -7,6 +7,8 @@ State::State()
 	window = pGerGraphic->getWindow();
 	font = pGerGraphic->getFont();
 	mousePos = pGerGraphic->getMousePosition();
+	view = new sf::View(sf::FloatRect(0,0,1280,720));
+	window->setView(*view);
 }
 
 State::~State() {

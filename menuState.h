@@ -10,9 +10,12 @@ protected:
 public:
 	virtual ~menuState();
 	menuState();
-	virtual void handleEvent() override;
-	virtual void draw() override;
-	virtual void update() override;
+
+
+	void readButtons();
+	void execButtons();
+	virtual void handleEvent();
+	virtual void executar();
 	virtual void mouseClick();
 
 };

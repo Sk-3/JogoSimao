@@ -8,7 +8,6 @@ private:
 	Button* quit;
 
 public:
-	virtual void draw() override;
 	PauseState();
 	~PauseState();
 };

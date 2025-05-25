@@ -7,8 +7,11 @@ protected:
 	int id;
 	static GerenciadorGrafico* pGerGraphic;
 public:
+
 	Ente();
 	void drawEnte(Ente* ente);
 	virtual ~Ente();
+
+	virtual void executar() = 0;
 };
 

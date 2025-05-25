@@ -8,6 +8,6 @@ public:
 	Inimigo(sf::Vector2f size, sf::Vector2f pos);
 	Inimigo();
 	~Inimigo();
-
+	virtual void executar() = 0; 
 };
 

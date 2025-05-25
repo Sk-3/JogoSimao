@@ -36,21 +36,9 @@ void GerenciadorEstado::handleEvent()
 
 void GerenciadorEstado::update()
 {
-	if (stack.empty()) {
-		pGerGraphic->getWindow()->close();
-		return;
-	}
-
-		stack.back()->update();
-
 		switch (stack.back()->getAction()) {
 		case Actions::VOLTAR_1_MENU: {
 			pop();
-			break;
-		}
-
-		case Actions::FASE_1:{
-			push(new Fase1());
 			break;
 		}
 		case Actions::FASE_2: {
@@ -77,18 +65,17 @@ void GerenciadorEstado::update()
 	
 }
 
-void GerenciadorEstado::draw()
+
+void GerenciadorEstado::executar()
 {
 
-
-	if(!stack.empty()){
-		//stack.back()->draw();
-		
-		for (const auto& state : stack) {
-			state->draw();
-		}
-	
+	if (stack.empty()) {
+		pGerGraphic->getWindow()->close();
+		return;
 	}
+
+	update();
+	stack.back()->executar();
 }
 
 void GerenciadorEstado::pop()
