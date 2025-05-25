@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+*	Classe de enumeração
+*	Define as ações tomadas pelo Gerenciador de Estados
+*/
 enum class Actions {
 	NADA,
 	PAUSE,

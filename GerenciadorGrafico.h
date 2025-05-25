@@ -1,5 +1,16 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+/**
+*	Classe Gerenciador Grafico
+* 
+*	Classe que vai definir valores padrões para a janela e para as views da aplicação
+* 
+*	Padrão singleton aplicado na classe para que se tenha apenas uma janela na aplicação toda
+* 
+*
+*/
+
+
 class GerenciadorGrafico
 {
 private:

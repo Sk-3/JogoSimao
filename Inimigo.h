@@ -1,5 +1,9 @@
 #pragma once
 #include "Character.h"
+
+/**
+*	Classe abstrata inimigo
+*/
 class Inimigo : public Character
 {
 private:

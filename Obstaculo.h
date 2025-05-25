@@ -1,6 +1,12 @@
 #pragma once
 #include "Entity.h"
 #include "Player.h"
+
+/**
+*	Classe abstrata Obstaculo
+*	
+*	Representa os objetos do jogo com que as entidades irão colidir
+*/
 class Obstaculo : public Entity
 {
 protected:

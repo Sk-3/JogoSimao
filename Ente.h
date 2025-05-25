@@ -1,5 +1,13 @@
 #pragma once
 #include "GerenciadorGrafico.h"	
+
+/**
+* Classe abstrata Ente
+* 
+* Responsável por definir um gerenciador gráfico global para todos os Entes da aplicação
+* fazendo com que todos realizem ações sempre na mesma janela
+* todo terá um clock para fins de controle de tempo
+*/
 class Ente
 {
 protected:

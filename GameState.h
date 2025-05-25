@@ -6,6 +6,15 @@
 #include "GerenciadorColisao.h"
 #include <sstream>
 
+/**
+*	Classe abstrata GameState
+*	Responsável por criar vetores de entidades para que suas classes filhas possam instanciar entidades
+* 
+*	Cria também um gerenciador de gravidade e um gerenciador de colisões
+*
+*	
+*/
+
 class GameState : public State
 {
 protected:

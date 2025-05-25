@@ -2,11 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include "GerenciadorEstado.h"
 #include "Ente.h"
+
+/**
+* Classe principal
+*	Chamada pela main
+*
+*	executa o gerenciador de estados
+*
+**/
 class Principal
 {
 private:
-
-	sf::RenderWindow* window;
 	GerenciadorGrafico* gerGraphic;
 	GerenciadorEstado* gerEstado;
 

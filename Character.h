@@ -1,5 +1,12 @@
 #pragma once
 #include "Entity.h"
+/**
+* Classe abstrata de personagens
+* responsável por:
+*	responder a colisões
+*	controlar seus status(health, speed, power, jumps)
+*	movimentar o personagem com base na sua velocidade
+*/
 class Character : public Entity
 {
 protected:

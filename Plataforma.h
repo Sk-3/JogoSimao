@@ -1,5 +1,11 @@
 #pragma once
 #include "Obstaculo.h"
+/**
+*	Classe concreta Plataforma
+*
+*	
+*/
+
 class Plataforma : public Obstaculo
 {
 public:

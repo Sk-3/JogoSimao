@@ -1,5 +1,11 @@
 #pragma once
 #include "menuState.h"
+
+/**
+*	Classe concreta menuPrincipal
+*
+*	Instancia botões para selecionar o nivel que deseja jogar
+*/
 class MenuSelectLvl : public menuState
 {
 private:

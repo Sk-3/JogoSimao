@@ -1,5 +1,18 @@
 #pragma once
 #include "Ente.h"
+/**
+* Classe abstrata Entity
+* 
+*	Representa todos os objetos desenhaveis dentro de um estado
+* 
+*	Em menuState representa botões
+* 
+*	Em GameState representa obstaculos/personagens/projeteis
+* 
+*	Inicializa a posição e o tamanho do shape da entidade
+*
+*/
+
 class Entity : public Ente
 {
 protected:

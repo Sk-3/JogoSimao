@@ -7,6 +7,19 @@
 #include "Fase2.h"
 #include "MenuPrincipal.h"
 #include "MenuSelectLvl.h"
+/**
+*	Classe concreta Gerenciador de estados
+*	Responsável por:
+*		criar uma pilha de estados e executar o topo da pilha
+*		Ler mudanças na ação do estado do topo da pilha
+*		caso ocorra alguma no atributo "action", realiza alguma ação como por exemplo:
+*			abrir menu
+*			voltar menu
+*			iniciar jogo1
+*			etc...
+*/
+
+
 
 class GerenciadorEstado : public Ente
 {

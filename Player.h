@@ -1,10 +1,16 @@
 #pragma once
 #include "Character.h"
+/**
+*	Classe concreta Player
+* 
+*	Representa o jogador principal
+* 
+*	é responsável por alterar a velocidade do jogador e realizar ações com base nos comandos chamados pelo objeto Fase
+*/
+
 class Player : public Character
 {
 private:
-	
-	
 	float maxSpeed;
 	sf::Vector2f center;
 public:

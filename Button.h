@@ -4,6 +4,14 @@
 #include "Ente.h"
 #include <iostream>
 #include "Actions.h"
+
+/**
+*	Classe responsável por criar botões e gerenciar suas ações
+*	Classe agregada aos menus
+*	seu atributo buttonAction é responsável por dizer qual ação ele vai tomar quando clicado
+*	seu atributo actualAction vai ser lido pelo menuState, quando ele for clicado ele vai mudar de "NADA" para a ação de buttonAction
+*/
+
 class Button : public Ente
 {
 private:
