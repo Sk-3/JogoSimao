@@ -1,6 +1,8 @@
 #pragma once
 #include "Obstaculo.h"
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Classe concreta Plataforma
 *
 *	

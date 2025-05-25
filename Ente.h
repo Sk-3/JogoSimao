@@ -2,11 +2,12 @@
 #include "GerenciadorGrafico.h"	
 
 /**
+*	Felipe Simbalista: 25/05/2025
 * Classe abstrata Ente
 * 
-* Responsável por definir um gerenciador gráfico global para todos os Entes da aplicação
-* fazendo com que todos realizem ações sempre na mesma janela
-* todo terá um clock para fins de controle de tempo
+*	Responsável por definir um gerenciador gráfico global para todos os Entes da aplicação
+*	fazendo com que todos realizem ações sempre na mesma janela
+*	todo terá um clock para fins de controle de tempo
 */
 class Ente
 {

@@ -1,6 +1,8 @@
 #pragma once
 
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Classe de enumeração
 *	Define as ações tomadas pelo Gerenciador de Estados
 */

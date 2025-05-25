@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 /**
+*	Felipe Simbalista: 25/05/2025
+*
 *	Classe Gerenciador Grafico
 * 
 *	Classe que vai definir valores padrões para a janela e para as views da aplicação

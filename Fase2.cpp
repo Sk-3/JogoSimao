@@ -19,9 +19,11 @@ Fase2::~Fase2()
 void Fase2::executar()
 {
 	window->clear();
-	handleEvent();
 	pGerGraphic->getWindow()->setView(view);
+	handleEvent();
 	view.setCenter(player->getPosition());
+
+
 	for (auto const& obst : obstaculos) {
 		obst->executar();
 	}
@@ -31,6 +33,10 @@ void Fase2::executar()
 	}
 	colision.executar();
 	gravity.executar();
+
+	for (auto const& charact : characters) {
+		charact->draw();
+	}
 }
 
 void Fase2::handleEvent()

@@ -84,18 +84,8 @@ void Player::stopAxisX()
 	}
 }
 
-void Player::resetPlayer()
-{
-	shape.setPosition(position);
-	health = 10;
-	speed = sf::Vector2f(0, 0);
-}
-
 void Player::executar()
 {
 	//move o player a atualiza a posição da camera
 	move();
-	//view.setCenter(shape.getPosition());
-	
-	pGerGraphic->getWindow()->draw(shape);
 }

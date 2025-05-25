@@ -66,8 +66,15 @@ void Character::hitRight(sf::FloatRect obstaculo)
 	}
 }
 
-void Character::executar() {
-	pGerGraphic->getWindow()->draw(shape);
-	move();
 
+
+
+void Character::executar() {
+	move();
+	
+}
+
+void Character::draw()
+{
+	pGerGraphic->getWindow()->draw(shape);
 }

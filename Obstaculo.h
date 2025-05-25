@@ -3,6 +3,8 @@
 #include "Player.h"
 
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Classe abstrata Obstaculo
 *	
 *	Representa os objetos do jogo com que as entidades irão colidir

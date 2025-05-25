@@ -5,6 +5,8 @@
 #include "Ente.h"
 
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Faz a verificação de colisão
 * 
 *	Se uma entidade entra dentro de outra, essa classe é responsável por chamar uma ação da entidade que se locomoveu pra dentro da outra

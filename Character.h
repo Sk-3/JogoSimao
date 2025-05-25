@@ -1,11 +1,12 @@
 #pragma once
 #include "Entity.h"
 /**
+*	Felipe Simbalista: 25/05/2025
 * Classe abstrata de personagens
-* responsável por:
-*	responder a colisões
-*	controlar seus status(health, speed, power, jumps)
-*	movimentar o personagem com base na sua velocidade
+*	 responsável por:
+*		responder a colisões
+*		controlar seus status(health, speed, power, jumps)
+*		movimentar o personagem com base na sua velocidade
 */
 class Character : public Entity
 {
@@ -31,7 +32,9 @@ public:
 	virtual void hitGround(sf::FloatRect obstaculo);
 	virtual void hitLeft (sf::FloatRect obstaculo);
 	virtual void hitRight(sf::FloatRect obstaculo);
-
+	
 	virtual void executar() = 0;
+	void draw();
+
 };
 

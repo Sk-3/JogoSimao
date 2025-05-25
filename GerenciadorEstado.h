@@ -8,6 +8,8 @@
 #include "MenuPrincipal.h"
 #include "MenuSelectLvl.h"
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Classe concreta Gerenciador de estados
 *	Responsável por:
 *		criar uma pilha de estados e executar o topo da pilha

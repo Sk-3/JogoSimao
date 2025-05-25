@@ -2,6 +2,7 @@
 #include "Character.h"
 
 /**
+*	Felipe Simbalista: 25/05/2025
 *	Classe abstrata inimigo
 */
 class Inimigo : public Character

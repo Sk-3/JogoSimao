@@ -7,6 +7,8 @@
 #include <sstream>
 
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Classe abstrata GameState
 *	Responsável por criar vetores de entidades para que suas classes filhas possam instanciar entidades
 * 

@@ -3,6 +3,8 @@
 #include "Inimigo.h"
 
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 * Classe concreta Fase2
 * 
 *	Derivada de GameState, fase2 é responsável por instanciar entidades e aloca-los nos vetores obstaculos/characters/projeteis

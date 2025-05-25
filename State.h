@@ -3,6 +3,8 @@
 #include "Ente.h"
 #include "Actions.h"
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 *	Classe abstrata State
 * 
 *	Gera uma view para cada estado e aplica na window

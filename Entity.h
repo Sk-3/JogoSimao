@@ -1,6 +1,8 @@
 #pragma once
 #include "Ente.h"
 /**
+*	Felipe Simbalista: 25/05/2025
+* 
 * Classe abstrata Entity
 * 
 *	Representa todos os objetos desenhaveis dentro de um estado
