@@ -14,17 +14,12 @@ GameState()
 
 Fase2::~Fase2()
 {
-	for (auto& obst : obstaculos) {
-		delete obst;
-	}
-
 }
 
 void Fase2::executar()
 {
 	window->clear();
 	handleEvent();
-	
 	pGerGraphic->getWindow()->setView(view);
 	view.setCenter(player->getPosition());
 	for (auto const& obst : obstaculos) {
@@ -34,7 +29,6 @@ void Fase2::executar()
 	for (auto const& charact : characters) {
 		charact->executar();
 	}
-
 	colision.executar();
 	gravity.executar();
 }

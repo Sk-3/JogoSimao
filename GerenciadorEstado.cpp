@@ -74,17 +74,22 @@ void GerenciadorEstado::executar()
 		return;
 	}
 
+	
 	update();
-	stack.back()->executar();
+	if(!stack.empty()){
+		stack.back()->executar();
+	}
 }
 
 void GerenciadorEstado::pop()
 {
-	delete stack.back();
-	stack.pop_back();
-
-	if (!stack.empty())
+	if (!stack.empty()) {
+		delete stack.back();
+		stack.pop_back();
+	}
+	if (!stack.empty()) {
 		stack.back()->setAction(Actions::NADA);
+	}
 }
 
 void GerenciadorEstado::push(State* newState)
