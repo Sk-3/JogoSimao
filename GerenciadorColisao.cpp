@@ -4,8 +4,9 @@ void GerenciadorColisao::executar()
 	colision();
 	
 }
-GerenciadorColisao::GerenciadorColisao():Ente()
+GerenciadorColisao::GerenciadorColisao():Ente(), characters(nullptr), obstaculos(nullptr)
 {
+	
 }
 GerenciadorColisao::GerenciadorColisao(std::vector<Character*>* characters, std::vector<Obstaculo*>* obstaculos)
 	:Ente()
@@ -54,12 +55,12 @@ void GerenciadorColisao::colision()
 					if (charCenterX < obstCenterX) {
 						// Personagem está mais à esquerda que o centro do obstáculo,
 						// então o lado DIREITO do personagem colidiu com o lado ESQUERDO do obstáculo.
-						charact->hitRight(obstaculoBounds); 
+						charact->hitRight(obstac); 
 					}
 					else {
 						// Personagem está mais à direita que o centro do obstáculo,
 						// então o lado ESQUERDO do personagem colidiu com o lado DIREITO do obstáculo.
-						charact->hitLeft(obstaculoBounds);
+						charact->hitLeft(obstac);
 					}
 				}
 				else {
@@ -67,12 +68,12 @@ void GerenciadorColisao::colision()
 					if (charCenterY < obstCenterY) {
 						// Personagem está mais acima que o centro do obstáculo,
 						// então a parte de BAIXO do personagem colidiu com a parte de CIMA do obstáculo.
-						charact->hitGround(obstaculoBounds);
+						charact->hitGround(obstac);
 					}
 					else {
 						// Personagem está mais abaixo que o centro do obstáculo,
 						// então a parte de CIMA do personagem colidiu com a parte de BAIXO do obstáculo.
-						charact->hitTop(obstaculoBounds);
+						charact->hitTop(obstac);
 					}
 				}
 

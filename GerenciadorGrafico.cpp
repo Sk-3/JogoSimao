@@ -1,5 +1,6 @@
 #include "GerenciadorGrafico.h"
 #include <iostream>
+#include "Entity.h"
 
 GerenciadorGrafico* GerenciadorGrafico::pGerGraphic = NULL;
 GerenciadorGrafico::GerenciadorGrafico()
@@ -29,6 +30,11 @@ bool GerenciadorGrafico::isOpen()
 {
 	return window->isOpen();
 }
+
+//void GerenciadorGrafico::desenharEnte(Entity* entity)
+//{
+//	window->draw(entity->getShape());
+//}
 
 const sf::FloatRect GerenciadorGrafico::getStdView() const
 {

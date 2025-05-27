@@ -1,8 +1,8 @@
-﻿  Button.cpp
-  main.cpp
+﻿  GameState.cpp
+  Projetil.cpp
   Gerando código
-  78 of 431 functions (18.1%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    39 functions had inline decision re-evaluated but remain unchanged
+  3 of 495 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finalizada a geração de código
   menuTeste.vcxproj -> C:\Users\Felipe\Documents\menuTeste\Release\menuTeste.exe

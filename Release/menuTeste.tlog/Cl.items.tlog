@@ -1,4 +1,5 @@
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Button.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Button.obj
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Cachorro.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Cachorro.obj
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Character.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Character.obj
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Ente.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Ente.obj
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Entity.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Entity.obj
@@ -19,4 +20,5 @@ C:\Users\Felipe\Documents\menuTeste\menuTeste\PauseState.cpp;C:\Users\Felipe\Doc
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Plataforma.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Plataforma.obj
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Player.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Player.obj
 C:\Users\Felipe\Documents\menuTeste\menuTeste\Principal.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Principal.obj
+C:\Users\Felipe\Documents\menuTeste\menuTeste\Projetil.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\Projetil.obj
 C:\Users\Felipe\Documents\menuTeste\menuTeste\State.cpp;C:\Users\Felipe\Documents\menuTeste\menuTeste\Release\State.obj

@@ -1,5 +1,6 @@
 #pragma once
 #include "Ente.h"
+#include "Directions.h"
 /**
 *	Felipe Simbalista: 25/05/2025
 * 
@@ -21,12 +22,17 @@ protected:
 	sf::Vector2f position;
 	sf::Vector2f shapeSize;
 	sf::RectangleShape shape;
+	sf::Vector2f speed;
 public:
+	const sf::Vector2f getPosition();
+	void move();
+	void changeSpeed(sf::Vector2f addSpeed);
 	virtual void executar() = 0;
 	const virtual sf::FloatRect getBounds();
 	Entity();
 	Entity(sf::Vector2f size, sf::Vector2f pos);
 	~Entity();
-
+	//void draw();
+	//sf::RectangleShape const getShape() const;
 };
 

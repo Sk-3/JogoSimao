@@ -10,6 +10,8 @@
 
 class Plataforma : public Obstaculo
 {
+private:
+
 public:
 	Plataforma(sf::Vector2f size, sf::Vector2f pos);
 	Plataforma(); 

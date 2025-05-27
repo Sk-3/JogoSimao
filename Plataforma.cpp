@@ -16,6 +16,7 @@ Plataforma::~Plataforma()
 
 void Plataforma::obstacular(Player* pPlayer)
 {
+	pPlayer->changeSpeed(sf::Vector2f(0.f, 5.f));
 }
 
 void Plataforma::executar()

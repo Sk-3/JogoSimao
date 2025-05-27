@@ -11,7 +11,7 @@
 * 
 *
 */
-
+class Entity;
 
 class GerenciadorGrafico
 {
@@ -36,10 +36,10 @@ public:
 	sf::RenderWindow* getWindow();
 	sf::Font* getFont();
 	bool isOpen();
+    //void desenharEnte(Entity* entity);
 	
-	
-
 	void display();
+
 	void updateMousePosition();
 	void setFrameLimit(int fps);
 };

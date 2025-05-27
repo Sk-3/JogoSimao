@@ -1,5 +1,20 @@
 #include "Entity.h"
 
+const sf::Vector2f Entity::getPosition()
+{
+	return shape.getPosition();
+}
+
+void Entity::move()
+{
+	shape.move(speed);
+}
+
+void Entity::changeSpeed(sf::Vector2f addSpeed)
+{
+	speed += addSpeed;
+}
+
 const sf::FloatRect Entity::getBounds()
 {
 	return shape.getGlobalBounds();
@@ -20,3 +35,11 @@ position(pos), shapeSize(size)
 Entity::~Entity()
 {
 }
+
+//sf::RectangleShape const Entity::getShape() const {
+//	return shape;
+//}
+//void Entity::draw()
+//{
+//	pGerGraphic->desenharEnte(this);
+//}

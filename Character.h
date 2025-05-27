@@ -8,31 +8,30 @@
 *		controlar seus status(health, speed, power, jumps)
 *		movimentar o personagem com base na sua velocidade
 */
+class Obstaculo;
+
 class Character : public Entity
 {
 protected:
 	int health; 
 	int power;
 	int jumps;
-	sf::Vector2f speed;
+	Directions direction;
 public:
 	//construtor padrão
 	Character();
 	//define posição e tamanho inicial do personagem
 	Character(sf::Vector2f size, sf::Vector2f pos);
 	~Character();
-
-	void move();
-
-	void changeSpeed(sf::Vector2f addSpeed);
-	
 	//Funções que não permitem o jogador entrar dentro do obstaculo passado como parametro
-	virtual void hitTop(sf::FloatRect obstaculo);
+	virtual void hitTop(Obstaculo* obstaculo);
 	//se atinge o chão, é movido pra cima, e assim é com todas as outras funções
-	virtual void hitGround(sf::FloatRect obstaculo);
-	virtual void hitLeft (sf::FloatRect obstaculo);
-	virtual void hitRight(sf::FloatRect obstaculo);
+	virtual void hitGround(Obstaculo* obstaculo);
+	virtual void hitLeft (Obstaculo* obstaculo);
+	virtual void hitRight(Obstaculo* obstaculo);
 	
+	const Directions getDirection() const;
+
 	virtual void executar() = 0;
 	void draw();
 

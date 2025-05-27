@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Obstaculo.h"
 
 Character::Character()
 	:Entity()
@@ -8,6 +9,7 @@ Character::Character()
 	power = 0;
 	speed.x = 0;
 	speed.y = 0;
+	direction = Directions::RIGHT;
 }
 
 Character::Character(sf::Vector2f size, sf::Vector2f pos)
@@ -18,62 +20,53 @@ Character::Character(sf::Vector2f size, sf::Vector2f pos)
 	power = 0;
 	speed.x = 0;
 	speed.y = 0;
+	direction = Directions::RIGHT;
 }
 
 Character::~Character()
 {
 }
 
-void Character::move()
-{
-	shape.move(speed);
-}
-
-void Character::changeSpeed(sf::Vector2f addSpeed)
-{
-	speed += addSpeed;
-}
-
-void Character::hitTop(sf::FloatRect obstaculo)
+void Character::hitTop(Obstaculo* obstaculo)
 {
 	speed.y = 0;
-	shape.setPosition(getBounds().left, obstaculo.top + obstaculo.height);
+	shape.setPosition(getBounds().left, obstaculo->getBounds().top + obstaculo->getBounds().height);
 }
 
-void Character::hitGround(sf::FloatRect obstaculo)
+void Character::hitGround(Obstaculo* obstaculo)
 {
 	speed.y = 0;
-	shape.setPosition(getBounds().left, (obstaculo.top - getBounds().height));
+	shape.setPosition(getBounds().left, (obstaculo->getBounds().top - getBounds().height));
 	jumps = 2;
 }
 
-void Character::hitLeft(sf::FloatRect obstaculo)
+void Character::hitLeft(Obstaculo* obstaculo)
 {
 	speed.x = 0;
-	shape.setPosition(obstaculo.left + obstaculo.width, getBounds().top);
+	shape.setPosition(obstaculo->getBounds().left + obstaculo->getBounds().width, getBounds().top);
 	if (jumps == 0) {
 		jumps = 1;
 	}
 }
 
-void Character::hitRight(sf::FloatRect obstaculo)
+void Character::hitRight(Obstaculo* obstaculo)
 {
 	
 	speed.x = 0;
-	shape.setPosition(obstaculo.left - getBounds().width, getBounds().top);
+	shape.setPosition(obstaculo->getBounds().left - getBounds().width, getBounds().top);
 	if (jumps == 0) {
 		jumps = 1;
 	}
 }
 
-
-
+const Directions Character::getDirection() const
+{
+	return direction;
+}
 
 void Character::executar() {
 	move();
-	
 }
-
 void Character::draw()
 {
 	pGerGraphic->getWindow()->draw(shape);

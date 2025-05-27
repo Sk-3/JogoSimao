@@ -9,6 +9,7 @@ Player::Player() {
 	shape.setFillColor(sf::Color::Blue);
 	shape.setPosition(position);
 }
+
 sf::Vector2f Player::getPosition()
 {
 	return shape.getPosition();
@@ -26,11 +27,13 @@ void Player::moveUp()
 
 void Player::moveDown()
 {
+	direction = Directions::DOWN;
 	speed.y += 0.3;
 }
 
 void Player::moveLeft()
 {
+	direction = Directions::LEFT;
 	if(speed.x >= -maxSpeed) {
 		speed.x -= 0.4;
 	}
@@ -38,6 +41,7 @@ void Player::moveLeft()
 
 void Player::moveRight()
 {
+	direction = Directions::RIGHT;
 	if (speed.x <= maxSpeed) {
 		speed.x += 0.4;
 	}
