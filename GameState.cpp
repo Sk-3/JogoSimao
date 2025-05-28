@@ -135,3 +135,17 @@ void GameState::removerProjeteis()
 	projeteis = projeteisAtivos;
 }
 
+void GameState::removerPersonagens()
+{
+	std::vector<Character*> personagensVivos;
+	for (Character* persona : characters) {
+		if (persona->vivo()) {
+			personagensVivos.push_back(persona);
+		}
+		else {
+			delete persona;
+		}
+	}
+	characters = personagensVivos;
+}
+

@@ -32,9 +32,12 @@ void GerenciadorColisao::colision()
 				projet->desativar();
 			}
 		}
-		for (const auto& charact : *characters) {
+		for (auto& charact : *characters) {
 			if (projBounds.intersects(charact->getBounds())) {
-				projet->desativar();
+				if (charact->getTipo() == TipoPersonagem::INMIGO) {
+					projet->desativar();
+					projet->danifica(charact);
+				}
 			}
 		}
 	}

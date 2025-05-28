@@ -14,4 +14,5 @@ enum class Actions {
 	SELECIONAR_FASE,
 	FASE_1,
 	FASE_2,
+	GAME_OVER
 };

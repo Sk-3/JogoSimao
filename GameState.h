@@ -22,7 +22,6 @@
 class GameState : public State
 {
 protected:
-	
 	sf::View view;
 	GerenciadorColisao colision;
 	Gravidade gravity;
@@ -40,4 +39,5 @@ public:
 	void dispararProjetil(Character* character);
 	virtual void executar() = 0;
 	void removerProjeteis();
+	void removerPersonagens();
 };

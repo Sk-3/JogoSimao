@@ -1,7 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Inimigo.h"
-
+#include "Cachorro.h"
 /**
 *	Felipe Simbalista: 25/05/2025
 *

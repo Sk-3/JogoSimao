@@ -8,6 +8,21 @@ Fase1::Fase1() :
 		obstaculos.push_back(new Plataforma(sf::Vector2f(100.f, 100.f), sf::Vector2f(100 * i, 670)));
 	}
 
+
+	characters.push_back(new Cachorro(sf::Vector2f(100, 100), sf::Vector2f(100, 300)));
+
+	characters.push_back(new Cachorro(sf::Vector2f(100, 100), sf::Vector2f(900, 300)));
+
+
+	characters.push_back(new Cachorro(sf::Vector2f(100, 100), sf::Vector2f(300, 300)));
+
+	characters.push_back(new Cachorro(sf::Vector2f(100, 100), sf::Vector2f(500, 300)));
+
+	characters.push_back(new Cachorro(sf::Vector2f(100, 100), sf::Vector2f(700, 300)));
+
+
+	
+
 }
 
 Fase1::~Fase1()
@@ -42,6 +57,11 @@ void Fase1::executar()
 	hud.executar();
 	hud.draw();
 	removerProjeteis();
+	if (!player->vivo())
+	{
+		setAction(Actions::GAME_OVER);
+	}
+	removerPersonagens();
 }
 
 

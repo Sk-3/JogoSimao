@@ -6,6 +6,7 @@
 #include "PauseState.h"
 #include "Fase2.h"
 #include "Fase1.h"
+#include "GameOver.h"
 #include "MenuPrincipal.h"
 #include "MenuSelectLvl.h"
 /**

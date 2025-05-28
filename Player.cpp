@@ -1,6 +1,7 @@
 #include "Player.h"
 
 Player::Player() {
+	tipo = TipoPersonagem::PLAYER;
 	jumps = 2;
 	position = sf::Vector2f(300.f, 0.f);
 
@@ -97,3 +98,5 @@ void Player::executar()
 void Player::draw() {
 	pGerGraphic->getWindow()->draw(shape);
 }
+
+

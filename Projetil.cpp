@@ -1,8 +1,11 @@
 #include "Projetil.h"
 #include "iostream"
+#include "Character.h"
 Projetil::Projetil(sf::Vector2f size, sf::Vector2f pos, Directions direction)
-	:Entity(size, pos)
+	:Entity(size, pos), dano(3)
 {
+
+
 	clock.restart();
 	if (direction == Directions::LEFT) {
 		speed = sf::Vector2f(-35.f, 0.f);
@@ -43,5 +46,10 @@ void Projetil::desativar()
 bool Projetil::Ativado()
 {
 	return ativo;
+}
+
+void Projetil::danifica(Character* personagem)
+{
+	personagem->tiraVida(dano);
 }
 

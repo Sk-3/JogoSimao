@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "TipoPersonagem.h"
 /**
 *	Felipe Simbalista: 25/05/2025
 * Classe abstrata de personagens
@@ -13,6 +14,7 @@ class Obstaculo;
 class Character : public Entity
 {
 protected:
+	TipoPersonagem tipo;
 	float maxSpeed;
 	float moveSpeed;
 	int health; 
@@ -32,8 +34,11 @@ public:
 	virtual void hitLeft (Obstaculo* obstaculo);
 	virtual void hitRight(Obstaculo* obstaculo);
 	
+	void tiraVida(int dano);
+	const TipoPersonagem getTipo() const;
 	const Directions getDirection() const;
 	const int getHealth() const;
+	const bool vivo() const;
 	virtual void executar() = 0;
 	virtual void draw();
 

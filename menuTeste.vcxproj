@@ -139,6 +139,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Fase1.cpp" />
     <ClCompile Include="Fase2.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GerenciadorColisao.cpp" />
     <ClCompile Include="GerenciadorEstado.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Fase1.h" />
     <ClInclude Include="Fase2.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GerenciadorColisao.h" />
     <ClInclude Include="GerenciadorEstado.h" />
@@ -190,6 +192,7 @@
     <ClInclude Include="Principal.h" />
     <ClInclude Include="Projetil.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="TipoPersonagem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

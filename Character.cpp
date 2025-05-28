@@ -15,6 +15,7 @@ Character::Character()
 Character::Character(sf::Vector2f size, sf::Vector2f pos)
 	:Entity(size, pos)
 {
+	tipo = TipoPersonagem::INMIGO; 
 	maxSpeed = 6;
 	moveSpeed = 120;
 	jumps = 2;
@@ -61,20 +62,32 @@ void Character::hitRight(Obstaculo* obstaculo)
 	}
 }
 
+void Character::tiraVida(int dano)
+{
+	health -= dano;
+}
+
+const TipoPersonagem Character::getTipo() const
+{
+	return tipo;
+}
+
 const Directions Character::getDirection() const
 {
 	return direction;
 }
-
 const int Character::getHealth() const
 {
 	return health;
 }
-
 void Character::executar() {
 	move();
 }
 void Character::draw()
 {
 	pGerGraphic->getWindow()->draw(shape);
+}
+const bool Character::vivo() const
+{
+	return (health > 0);
 }

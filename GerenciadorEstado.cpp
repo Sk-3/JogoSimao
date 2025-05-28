@@ -60,12 +60,19 @@ void GerenciadorEstado::update()
 		}
 		case Actions::PAUSE: {
 			push(new PauseState());
+			break;
 		}
+		case Actions::GAME_OVER:
+		{
+			push(new GameOver());
+			break;
+		}
+
 		default:
 			break;
 			
 		}
-
+		
 	
 }
 
