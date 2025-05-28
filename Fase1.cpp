@@ -1,20 +1,20 @@
-#include "Fase2.h"
-Fase2::Fase2():
-GameState()
+#include "Fase1.h"
+Fase1::Fase1() :
+	GameState()
 {
 	//Criação das plataformas da fase
-		
-		for (int i = 0; i <= 30; i++) {
-			obstaculos.push_back(new Plataforma(sf::Vector2f(100.f, 100.f), sf::Vector2f(100 * i, 670)));
-		}
+
+	for (int i = 0; i <= 30; i++) {
+		obstaculos.push_back(new Plataforma(sf::Vector2f(100.f, 100.f), sf::Vector2f(100 * i, 670)));
+	}
 
 }
 
-Fase2::~Fase2()
+Fase1::~Fase1()
 {
 }
 
-void Fase2::executar()
+void Fase1::executar()
 {
 	//clock.restart();
 	window->clear();
@@ -41,6 +41,7 @@ void Fase2::executar()
 	}
 	hud.executar();
 	hud.draw();
+	removerProjeteis();
 }
 
 

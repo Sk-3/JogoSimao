@@ -7,6 +7,8 @@ const sf::Vector2f Entity::getPosition()
 
 void Entity::move()
 {
+	
+
 	shape.move(speed);
 }
 

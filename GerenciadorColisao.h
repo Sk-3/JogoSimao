@@ -1,6 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Obstaculo.h"
+#include "Projetil.h"
 #include "vector"
 #include "Ente.h"
 
@@ -19,11 +20,12 @@ class GerenciadorColisao : public Ente
 private:
 	std::vector<Character*>* characters;
 	std::vector<Obstaculo*>* obstaculos;
+	std::vector<Projetil*>* projeteis;
 public:
 
 	void executar();
 	GerenciadorColisao();
-	GerenciadorColisao(std::vector<Character*>* characters, std::vector<Obstaculo*>*);
+	GerenciadorColisao(std::vector<Character*>* characters, std::vector<Obstaculo*>*, std::vector<Projetil*>* projeteis);
 	~GerenciadorColisao();
 	
 	

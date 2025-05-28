@@ -15,6 +15,8 @@ Character::Character()
 Character::Character(sf::Vector2f size, sf::Vector2f pos)
 	:Entity(size, pos)
 {
+	maxSpeed = 6;
+	moveSpeed = 120;
 	jumps = 2;
 	health = 10;
 	power = 0;
@@ -62,6 +64,11 @@ void Character::hitRight(Obstaculo* obstaculo)
 const Directions Character::getDirection() const
 {
 	return direction;
+}
+
+const int Character::getHealth() const
+{
+	return health;
 }
 
 void Character::executar() {

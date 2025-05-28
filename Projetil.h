@@ -9,6 +9,7 @@ public:
 	Projetil();
 	~Projetil();
 	void executar();
-
+	void desativar();
+	bool Ativado();
 };
 

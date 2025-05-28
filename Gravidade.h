@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Character.h"
+#include "Projetil.h"
 
 /**
 *	Felipe Simbalista: 25/05/2025
@@ -12,9 +13,10 @@
 class Gravidade
 {
 	sf::Vector2f gravityForce;
+	std::vector<Projetil*>* projeteis;
 	std::vector<Character*>* characters;
 public:
-	Gravidade(std::vector<Character*>* characters);
+	Gravidade(std::vector<Character*>* characters, std::vector<Projetil*>* projeteis);
 	void executar();
 	void aplyGravity();
 };

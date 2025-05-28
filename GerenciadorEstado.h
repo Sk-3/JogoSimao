@@ -5,6 +5,7 @@
 #include <vector>
 #include "PauseState.h"
 #include "Fase2.h"
+#include "Fase1.h"
 #include "MenuPrincipal.h"
 #include "MenuSelectLvl.h"
 /**

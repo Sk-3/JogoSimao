@@ -93,3 +93,7 @@ void Player::executar()
 	//move o player a atualiza a posição da camera
 	move();
 }
+
+void Player::draw() {
+	pGerGraphic->getWindow()->draw(shape);
+}

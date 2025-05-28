@@ -5,6 +5,7 @@
 #include "Plataforma.h"
 #include "Projetil.h"
 #include "GerenciadorColisao.h"
+#include "Hud.h"
 #include <sstream>
 
 /**
@@ -21,11 +22,13 @@
 class GameState : public State
 {
 protected:
+	
 	sf::View view;
 	GerenciadorColisao colision;
 	Gravidade gravity;
 	Player* player2;
 	Player* player;
+	Hud hud;
 	std::vector<Entity*> entidades;
 	std::vector<Projetil*> projeteis;
 	std::vector<Obstaculo*> obstaculos;
@@ -36,4 +39,5 @@ public:
 	virtual void handleEvent();
 	void dispararProjetil(Character* character);
 	virtual void executar() = 0;
+	void removerProjeteis();
 };

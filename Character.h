@@ -13,6 +13,8 @@ class Obstaculo;
 class Character : public Entity
 {
 protected:
+	float maxSpeed;
+	float moveSpeed;
 	int health; 
 	int power;
 	int jumps;
@@ -31,9 +33,9 @@ public:
 	virtual void hitRight(Obstaculo* obstaculo);
 	
 	const Directions getDirection() const;
-
+	const int getHealth() const;
 	virtual void executar() = 0;
-	void draw();
+	virtual void draw();
 
 };
 

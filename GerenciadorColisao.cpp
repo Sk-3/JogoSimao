@@ -4,13 +4,14 @@ void GerenciadorColisao::executar()
 	colision();
 	
 }
-GerenciadorColisao::GerenciadorColisao():Ente(), characters(nullptr), obstaculos(nullptr)
+GerenciadorColisao::GerenciadorColisao():Ente(), characters(nullptr), obstaculos(nullptr), projeteis(nullptr)
 {
 	
 }
-GerenciadorColisao::GerenciadorColisao(std::vector<Character*>* characters, std::vector<Obstaculo*>* obstaculos)
+GerenciadorColisao::GerenciadorColisao(std::vector<Character*>* characters, std::vector<Obstaculo*>* obstaculos, std::vector<Projetil*>* projeteis)
 	:Ente()
 {
+	this->projeteis = projeteis;
 	this->obstaculos = obstaculos;
 	this->characters = characters;
 }
@@ -24,6 +25,22 @@ GerenciadorColisao::~GerenciadorColisao()
 
 void GerenciadorColisao::colision()
 {
+	for (auto& projet : *projeteis) {
+		sf::FloatRect projBounds = projet->getBounds();
+		for (const auto& obst : *obstaculos) {
+			if (projBounds.intersects(obst->getBounds())) {
+				projet->desativar();
+			}
+		}
+		for (const auto& charact : *characters) {
+			if (projBounds.intersects(charact->getBounds())) {
+				projet->desativar();
+			}
+		}
+	}
+
+
+
 	for (auto& charact : *characters) {
 		sf::FloatRect characterBounds = charact->getBounds();
 		for (const auto& obstac : *obstaculos) {

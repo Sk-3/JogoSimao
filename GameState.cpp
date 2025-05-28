@@ -1,10 +1,10 @@
 #include "GameState.h"
-
 GameState::GameState():
-	State(), gravity(&characters),
-	colision(&characters, &obstaculos),
+	State(), gravity(&characters, &projeteis),
+	colision(&characters, &obstaculos, &projeteis),
 	player(new Player()), view(pGerGraphic->getStdView())
 {
+	hud.setPlayer(player);
 	player2 = nullptr;
 	pGerGraphic->getWindow()->setView(view);
 	characters.push_back(player);
@@ -17,6 +17,9 @@ GameState::~GameState() {
 	}
 	for (auto& charact : characters) {
 		delete charact;
+	}
+	for (auto& projetil : projeteis) {
+		delete projetil;
 	}
 }
 
@@ -108,10 +111,27 @@ void GameState::handleEvent()
 void GameState::dispararProjetil(Character* character)
 {
 	sf::Vector2f position = character->getPosition();
+	position.y += (character->getBounds().height / 2);
 
 	if (character->getDirection() != Directions::LEFT) {
 		position.x += character->getBounds().width;
+		
 	}
 
 	projeteis.push_back(new Projetil(sf::Vector2f(10.0, 10.0), position, character->getDirection()));
 }
+
+void GameState::removerProjeteis()
+{
+	std::vector<Projetil*> projeteisAtivos;
+	for (Projetil* projet : projeteis) {
+		if (projet->Ativado()) {
+			projeteisAtivos.push_back(projet);
+		}
+		else {
+			delete projet;
+		}
+	}
+	projeteis = projeteisAtivos;
+}
+

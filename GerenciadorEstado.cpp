@@ -41,6 +41,10 @@ void GerenciadorEstado::update()
 			pop();
 			break;
 		}
+		case Actions::FASE_1: {
+			push(new Fase1());
+			break;
+		}
 		case Actions::FASE_2: {
 			push(new Fase2());
 			break;

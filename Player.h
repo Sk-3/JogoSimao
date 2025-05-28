@@ -24,6 +24,7 @@ public:
 	void dash();
 	void stopAxisX();
 	void executar(); 
+	void draw()override;
 };
 
 

@@ -12,7 +12,7 @@
 class Ente
 {
 protected:
-	static sf::Clock* clock;
+	sf::Clock clock;
 	int id;
 	static GerenciadorGrafico* pGerGraphic;
 public:
